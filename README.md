@@ -16,3 +16,7 @@ O que é JPA? Hibernate?
 * EntityManager - Interface JPA, por meio dela podemos abstrair o mundo relacional e focar apenas em objetos;
 * através da classe Persistence é possível lê as configurações do arquivo persistence.xml e então criar uma EntitiManagerFactory;
 * toda entidade deve possuir a annotation @Entity e possuir um identificador anotado como @Id;
+
+### Modulo 2 - Usando EntityManager
+
+
