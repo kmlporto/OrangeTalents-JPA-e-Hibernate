@@ -19,4 +19,18 @@ O que é JPA? Hibernate?
 
 ### Modulo 2 - Usando EntityManager
 
-
+* Transações - é um conjunto de operações que executam de forma atômica, e  são criadas e gerenciadas pelos SGBD's;
+* Estados de objetos com relação ao jpa
+	* managed - gerenciado pela JPA, existe uma sincronização dos dados.
+		* ao fazer um find, o  JPA ainda terá uma referencia para o objeto devolvido;
+		* assim, quando alterarmos algum atributo desse objeto e fazermos o commit, haverá uma sincronização automática;
+		* possui id;
+	* detached - não é gerenciado pelo JPA, não há sincronização com os dados.
+		* podemos ver esse estado quando fechamos a conexão com o EntityManager, após essa conexão ser fechada toda a alteração que é realizada com o objeto em questão ela não é refletida no banco;
+		* para refletir alterações realizadas depois de fechar uma conexão com o EntityManager, é necessário criar outro EntityManager (e então volta para o estado managed) e aplicar alterações usando um merge;
+		* possui id;
+	* transiente - não possui representação no banco de dados, nem o EntityManager o conhece;
+		* não possui id;
+	* removed - objeto conhecido pelo EntityManage, e que foi deletado no banco de dados;
+		* não possui registro no banco, pois acabou de ser removido;
+		* possui id;
