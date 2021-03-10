@@ -52,3 +52,13 @@ Módulo 4 - Relacionamento para muitos
 * para categorizar as movimentações - uma movimentação pode ter várias categorias, criamos um atributo dentro de Movimentacao que é uma lista de Categoria, e então:
 	* podemos colocar a anotação @OnyToMany, mas dessa forma essas categorias só poderiam pertencer a uma determinada movimentação, e não queremos isso;
 	*  ou podemos colocar a anotação @ManyToMany, então as categorias cadastradas para uma movimentação A poderá ser reutilizada para uma movimentação B;
+
+Módulo 5 - Pesquisando com JPQL(Java Persistence Query Language)
+* JPQL é feita para abstrair o mundo relacional, permitindo assim que nos preocupamos apenas com objetos;
+* após criar uma string com a query, é necessário usar o EntityManager e chamar o método createQuery();
+* podemos pegar o resultado da query através do getResultList();
+* para passar parâmetros dentro da string que representa a query:
+	* dentro da string colocamos ":<variavel>", ex: "select m from Movimentacao m where m.conta = :pConta";
+	* utiliza o método getParameter(), passando o nome do parâmetro e o valor do mesmo;
+	
+![Ciclo de vida de um objeto no JPA](persistence-context.png)
