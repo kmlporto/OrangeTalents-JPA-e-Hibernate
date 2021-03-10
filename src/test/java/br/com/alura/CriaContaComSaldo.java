@@ -10,7 +10,7 @@ import static java.lang.Long.valueOf;
 
 public class CriaContaComSaldo {
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("contas");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("alura");
         EntityManager entityManager = emf.createEntityManager();
 
         Conta conta = new Conta();

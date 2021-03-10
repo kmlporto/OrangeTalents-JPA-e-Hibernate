@@ -34,3 +34,11 @@ O que é JPA? Hibernate?
 	* removed - objeto conhecido pelo EntityManage, e que foi deletado no banco de dados;
 		* não possui registro no banco, pois acabou de ser removido;
 		* possui id;
+
+### Módulo 3 - Mapeando relacionamentos
+
+* em bancos relacionais existem relacionamentos entre tabelas, então precisamos da mesma forma representar estes relacionamentos entre os objetos ;
+* com JPA é possível fazer isso através de anotações;
+* no nosso exemplo uma conta pode ter várias movimentações, ou seja, um relacionamento de um para muitos;
+	* dessa forma, na classe Movimentacao, no atributo do tipo Conta iremos anotar com @ManyToOne;
+	* no banco esse relacionamento ficará representado na tabela de movimentacao por uma coluna id_conta (chave estrangeira para a tabela conta); 

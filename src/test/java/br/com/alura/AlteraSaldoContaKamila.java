@@ -9,7 +9,7 @@ import javax.persistence.Persistence;
 
 public class AlteraSaldoContaKamila {
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("contas");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("alura");
         EntityManager entityManager = emf.createEntityManager();
 
         Conta contaKamila = entityManager.find(Conta.class, 1L);
