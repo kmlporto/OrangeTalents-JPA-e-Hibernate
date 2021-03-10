@@ -41,4 +41,14 @@ O que é JPA? Hibernate?
 * com JPA é possível fazer isso através de anotações;
 * no nosso exemplo uma conta pode ter várias movimentações, ou seja, um relacionamento de um para muitos;
 	* dessa forma, na classe Movimentacao, no atributo do tipo Conta iremos anotar com @ManyToOne;
-	* no banco esse relacionamento ficará representado na tabela de movimentacao por uma coluna id_conta (chave estrangeira para a tabela conta); 
+	* no banco esse relacionamento ficará representado na tabela de movimentacao por uma coluna id_conta (chave estrangeira para a tabela conta);
+* os relacionamentos podem ser unidirecional (só pode ser identificado de um dos lados) e bidirecional (pode ser identificado dos dois lados);
+* @ManyToMany - relacionamento entre duas entidades que relacionam-se entre si de forma múltipla, ou seja, a entidade A possui várias entidades B, assim como a entidade B possui várias entidades A;
+	* nesse tipo de relacionamento, assim como no mundo relacional, é criado uma tabela de relacionamento;
+* @OneToMany - relacionamento entre duas entidades em que a entidade A possui várias entidades B, porém a entidade B não possui várias entidades A;
+* @OneToOne - relacionamento entre duas entidades em que a entidade A possui apenas uma entidade B, assim como a entidade B possui apenas uma entidade A;
+
+Módulo 4 - Relacionamento para muitos
+* para categorizar as movimentações - uma movimentação pode ter várias categorias, criamos um atributo dentro de Movimentacao que é uma lista de Categoria, e então:
+	* podemos colocar a anotação @OnyToMany, mas dessa forma essas categorias só poderiam pertencer a uma determinada movimentação, e não queremos isso;
+	*  ou podemos colocar a anotação @ManyToMany, então as categorias cadastradas para uma movimentação A poderá ser reutilizada para uma movimentação B;
